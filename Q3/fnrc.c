@@ -8,18 +8,24 @@
  * - length: tamanho do array - número de caracteres
  * Output: A primeira letra que não se repete, ou -1, caso todas se repitam.
  */
-char firstNonRepeatingChar (char sentence[], int length)
-{
-    printf("\nfirstNonRepeatingChar::START: %s, %d\n", s, length);
-    
-    // TODO: YOUR CODE HERE!
-    
-    printf("\nfirstNonRepeatingChar::END\n");
-    return -1;
-}
+char firstNonRepeatingChar (char sentence[], int length){
+    printf("\nfirstNonRepeatingChar::START: %s, %d\n", sentence, length);
 
-int main()
-{
+    int repeats = 0;
+    for(int i=0; i<length; i++){
+        repeats = 0;
+        for(int j=0; j<length; j++){
+            if(i != j && sentence[i] == sentence[j]){
+                repeats = 1;
+            }
+        }         
+        if(repeats == 0) {
+          printf("%c\n",sentence[i]);
+          break;
+        }
+    }
+}
+int main(){
     printf("\n### CESAR School :: Sistemas Digitais :: Coding1 :: firstNonRepeatingChar ###\n");
     
     firstNonRepeatingChar("ovo", 3);
