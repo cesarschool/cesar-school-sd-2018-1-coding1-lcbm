@@ -13,15 +13,20 @@
 
 bool isPalindrome (char sentence[], int length) {
     printf("\nisPalindrome::START: %s, %d\n", sentence, length);
-
-    // TODO: YOUR CODE HERE!
     
-    printf("\nisPalindrome::END\n");
-    return false;
+    int i = length-1;
+    int l = 0;
+    while (i > l){
+        if (sentence[l++] != sentence[i--]){
+            printf("%s is Not Palindrome", sentence);
+            return false;
+        }
+    }
+    printf("%s is palindrome", sentence);
+    return true;
 }
 
-int main()
-{
+int main(){
     printf("\n### CESAR School :: Sistemas Digitais :: Coding1 :: Palindrome ###\n");
     
     // true cases
@@ -34,4 +39,3 @@ int main()
 
     return 0;
 }
- 
